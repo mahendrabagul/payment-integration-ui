@@ -24,7 +24,7 @@ export class PaymentComponent implements OnInit {
       productinfo: this.payuform.productinfo,
       amount: this.payuform.amount
     };
-    return this.http.post<any>('http://localhost:8070'
+    return this.http.post<any>('https://paypal-integration-service.herokuapp.com'
       + '/v1/payment/gateway/payumoney/payment-details', paymentPayload).subscribe(
         data => {
           this.payuform.txnid = data.txnid;
